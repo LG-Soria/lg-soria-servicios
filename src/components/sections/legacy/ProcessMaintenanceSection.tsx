@@ -6,7 +6,7 @@ import { SectionHeader } from "@/components/layout/SectionHeader";
 import { TimelineStep } from "@/components/ui/TimelineStep";
 import { ButtonCTA } from "@/components/ui/ButtonCTA";
 import { useWhatsappLink } from "@/hooks/useWhatsappLink";
-import { Timeline } from "../ui/Timeline";
+import { Timeline } from "@/components/ui/Timeline";
 
 type StepItem = {
     step: number;

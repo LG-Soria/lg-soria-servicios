@@ -7,7 +7,7 @@ import { SectionHeader } from "@/components/layout/SectionHeader";
 import { TimelineStep } from "@/components/ui/TimelineStep";
 import { ButtonCTA } from "@/components/ui/ButtonCTA";
 import { useWhatsappLink } from "@/hooks/useWhatsappLink";
-import { Timeline } from "../ui/Timeline";
+import { Timeline } from "@/components/ui/Timeline";
 
 type StepItem = {
   step: number;
@@ -137,16 +137,16 @@ export function ProcesoSection() {
 
       {/* Timeline */}
       <Timeline className="mt-4 ">
-          {STEPS.map((stepItem) => (
-            <TimelineStep
-              key={stepItem.step}
-              step={stepItem.step}
-              title={stepItem.title}
-              description={stepItem.description}
-              highlighted={stepItem.highlighted}
-            />
-          ))}
-        </Timeline>
+        {STEPS.map((stepItem) => (
+          <TimelineStep
+            key={stepItem.step}
+            step={stepItem.step}
+            title={stepItem.title}
+            description={stepItem.description}
+            highlighted={stepItem.highlighted}
+          />
+        ))}
+      </Timeline>
 
       {/* Nota sobre hosting y dominio */}
       <div className="mx-auto max-w-3xl space-y-2 text-sm text-slate-100 sm:text-base">
