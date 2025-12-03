@@ -1,6 +1,6 @@
 // src/config/site.ts
 const siteName =
-  process.env.NEXT_PUBLIC_SITE_NAME ?? "lg-soria | Desarrollo web";
+  process.env.NEXT_PUBLIC_SITE_NAME ?? "LG-Soria | Desarrollo web";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://lg-soria.com.ar";
 

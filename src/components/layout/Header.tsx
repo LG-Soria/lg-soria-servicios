@@ -82,12 +82,18 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
       <Container className="flex h-16 items-center justify-between gap-4">
         <motion.div
-          className="flex items-center gap-2"
+          className="flex items-center gap-3"
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <span className="h-8 w-8 rounded-xl bg-linear-to-br from-brand to-brand-dark" />
+          <div className="relative h-10 w-10 overflow-hidden rounded-xl">
+            <img
+              src="/logo3.jpg"
+              alt="LG-Soria Logo"
+              className="h-full w-full object-cover scale-125"
+            />
+          </div>
           <div className="flex flex-col leading-tight">
             <span className="text-sm font-semibold tracking-wide uppercase text-foreground">
               lg-soria

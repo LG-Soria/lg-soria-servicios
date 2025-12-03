@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
     default: siteConfig.name,
-    template: "%s | lg-soria",
+    template: "%s | LG-Soria",
   },
   description:
     "Servicios de desarrollo web, integraciones y soluciones a medida para negocios que quieren mejorar su presencia online.",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     type: "website",
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: "/logo.svg",
   },
   alternates: {
     canonical: "/",

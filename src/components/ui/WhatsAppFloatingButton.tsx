@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { FiMessageCircle } from "react-icons/fi";
+import { FaWhatsapp } from "react-icons/fa";
 import { cn } from "@/lib/cn";
 import { useWhatsappLink, type WhatsappCTAType } from "@/hooks/useWhatsappLink";
 import { trackEvent } from "@/lib/analytics";
@@ -66,7 +66,7 @@ export function WhatsAppFloatingButton(props: WhatsAppFloatingButtonProps) {
           })
         }
       >
-        <FiMessageCircle className="h-6 w-6" />
+        <FaWhatsapp className="h-6 w-6" />
 
         <span className={cn(showLabelOnMobile ? "inline" : "hidden sm:inline")}>
           {label}
