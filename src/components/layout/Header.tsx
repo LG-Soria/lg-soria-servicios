@@ -40,9 +40,33 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const scrollToSection = (sectionId: string) => {
+    console.log('Attempting to scroll to:', sectionId);
     const element = document.getElementById(sectionId);
-    element?.scrollIntoView({ behavior: 'smooth' });
-    setMobileMenuOpen(false);
+
+    if (element) {
+      console.log('Element found:', element);
+
+      // Close menu first to prevent animation interference
+      setMobileMenuOpen(false);
+
+      // Use setTimeout to ensure menu close animation doesn't interfere
+      setTimeout(() => {
+        // Get the header height to offset the scroll
+        const headerOffset = 64; // 4rem = 64px (h-16 class)
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.scrollY - headerOffset;
+
+        console.log('Scrolling to position:', offsetPosition);
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }, 150);
+    } else {
+      console.error(`Section with id "${sectionId}" not found`);
+      setMobileMenuOpen(false);
+    }
   };
 
   const navLinks = [
@@ -118,26 +142,24 @@ export function Header() {
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            className="sm:hidden border-b border-border bg-background overflow-hidden"
+            className="sm:hidden border-b border-border bg-background"
             variants={mobileMenuVariants}
             initial="hidden"
             animate="visible"
             exit="exit"
+            style={{ pointerEvents: 'auto' }}
           >
             <Container className="py-4">
               <nav className="flex flex-col space-y-4">
                 {navLinks.map((link) => (
-                  <a
+                  <button
                     key={link.id}
-                    href={`#${link.id}`}
-                    className="text-sm text-muted-foreground hover:text-brand transition-colors py-2"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      scrollToSection(link.id);
-                    }}
+                    className="text-sm text-muted-foreground hover:text-brand transition-colors py-2 text-left w-full"
+                    onClick={() => scrollToSection(link.id)}
+                    type="button"
                   >
                     {link.label}
-                  </a>
+                  </button>
                 ))}
               </nav>
             </Container>
