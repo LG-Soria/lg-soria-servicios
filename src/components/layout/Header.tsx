@@ -4,6 +4,7 @@ import { Container } from "./Container";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { FiMenu, FiX } from "react-icons/fi";
 import { motion, AnimatePresence, Variants } from "framer-motion";
+import { scrollToSection } from "@/components/utils/scrollToSection";
 
 const navVariants: Variants = {
   hidden: { opacity: 0, y: -10 },
@@ -38,36 +39,6 @@ const mobileMenuVariants: Variants = {
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  const scrollToSection = (sectionId: string) => {
-    console.log('Attempting to scroll to:', sectionId);
-    const element = document.getElementById(sectionId);
-
-    if (element) {
-      console.log('Element found:', element);
-
-      // Close menu first to prevent animation interference
-      setMobileMenuOpen(false);
-
-      // Use setTimeout to ensure menu close animation doesn't interfere
-      setTimeout(() => {
-        // Get the header height to offset the scroll
-        const headerOffset = 64; // 4rem = 64px (h-16 class)
-        const elementPosition = element.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.scrollY - headerOffset;
-
-        console.log('Scrolling to position:', offsetPosition);
-
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth'
-        });
-      }, 150);
-    } else {
-      console.error(`Section with id "${sectionId}" not found`);
-      setMobileMenuOpen(false);
-    }
-  };
 
   const navLinks = [
     { id: "hero", label: "Inicio" },
@@ -161,7 +132,7 @@ export function Header() {
                   <button
                     key={link.id}
                     className="text-sm text-muted-foreground hover:text-brand transition-colors py-2 text-left w-full"
-                    onClick={() => scrollToSection(link.id)}
+                    onClick={() => scrollToSection(link.id, () => setMobileMenuOpen(false))}
                     type="button"
                   >
                     {link.label}

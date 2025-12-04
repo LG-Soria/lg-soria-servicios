@@ -14,6 +14,7 @@ import {
 } from "react-icons/fi";
 import { trackEvent } from "@/lib/analytics";
 import { motion, Variants } from "framer-motion";
+import { scrollToSection } from "@/components/utils/scrollToSection";
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -185,6 +186,10 @@ export function HeroSection() {
               variant="secondary"
               size="md"
               className="text-sm font-medium text-foreground/90"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection("packs-beneficios");
+              }}
             >
               Ver packs y opciones
             </ButtonCTA>
