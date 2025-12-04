@@ -51,11 +51,7 @@ const FAQS: FAQ[] = [
                         mejor tu historia, servicios y casos.
                     </li>
                     <li>
-                        El <strong>Pack 3</strong> agrega integraciones como pagos,
-                        formularios avanzados o agenda.
-                    </li>
-                    <li>
-                        El <strong>Pack 4</strong> se orienta a sistemas internos o paneles
+                        El <strong>Pack 3</strong> se orienta a sistemas internos o paneles
                         a medida.
                     </li>
                 </ul>

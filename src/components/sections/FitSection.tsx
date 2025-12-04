@@ -199,12 +199,12 @@ export function FitSection() {
         {/* Rango de inversión + CTA suave */}
         <motion.div
           variants={cardVariants}
-          className="space-y-3 text-sm text-foreground sm:text-base md:text-center"
+          className="space-y-3 mt-6 text-sm text-foreground sm:text-base md:text-center"
         >
           <p>
             Los proyectos se mueven, en general, en un rango aproximado entre{" "}
             <span className="font-semibold">
-              $150.000 y $500.000 ARS
+              $350.000 y $900.000 ARS
             </span>
             , según el pack y el alcance. Siempre lo definimos por propuesta clara
             antes de empezar.

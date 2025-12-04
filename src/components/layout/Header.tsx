@@ -70,7 +70,7 @@ export function Header() {
               lg-soria
             </span>
             <span className="text-xs text-muted-foreground">
-              Desarrollo web &amp; integraciones
+              Desarrollo web &amp; aplicaciones
             </span>
           </div>
         </motion.div>
