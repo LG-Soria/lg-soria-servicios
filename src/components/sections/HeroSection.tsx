@@ -181,7 +181,7 @@ export function HeroSection() {
             </ButtonCTA>
 
             <ButtonCTA
-              href="#packs"
+              href="#packs-beneficios"
               variant="secondary"
               size="md"
               className="text-sm font-medium text-foreground/90"
