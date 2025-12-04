@@ -155,6 +155,7 @@ export function PackCard(props: PackCardProps) {
           href={href}
           fullWidth
           size="md"
+          target="_blank"
           onClick={() =>
             trackEvent("cta_whatsapp_click", {
               location: "packs",

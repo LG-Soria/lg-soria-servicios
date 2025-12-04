@@ -172,6 +172,7 @@ export function PacksSection() {
         </p>
 
         <ButtonCTA
+          target="_blank"
           href={whatsappAdviceHref}
           variant="secondary"
           size="lg"

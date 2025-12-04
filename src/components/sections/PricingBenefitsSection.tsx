@@ -197,7 +197,7 @@ export function PricingBenefitsSection() {
                     <p className="text-muted-foreground">
                         Si no tienes claro qué pack encaja mejor con tu situación, no pasa nada. Escríbeme por WhatsApp, revisamos juntos tu caso y definimos el mejor punto de partida.
                     </p>
-                    <ButtonCTA href={whatsappAdviceHref} variant="secondary" size="lg">
+                    <ButtonCTA target="_blank" href={whatsappAdviceHref} variant="secondary" size="lg">
                         No sé qué pack elegir, quiero asesoramiento
                     </ButtonCTA>
                 </motion.div>

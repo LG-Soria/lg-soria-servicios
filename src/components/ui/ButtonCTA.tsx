@@ -87,7 +87,7 @@ export function ButtonCTA(props: ButtonCTAProps) {
     const classes = getCommonClasses({ variant, size, fullWidth, className });
 
     return (
-      <Link href={href} className={classes} {...linkRest}>
+      <Link href={href} className={classes} {...linkRest}  >
         {iconLeft && <span className="inline-flex shrink-0">{iconLeft}</span>}
         <span className="inline-flex">{children}</span>
         {iconRight && <span className="inline-flex shrink-0">{iconRight}</span>}

@@ -396,6 +396,7 @@ export function FinalCtaSection() {
             <div className="space-y-3">
               <ButtonCTA
                 href={whatsappHref}
+                target="_blank"
                 onClick={() =>
                   trackEvent("cta_whatsapp_click", {
                     location: "final_cta_section",

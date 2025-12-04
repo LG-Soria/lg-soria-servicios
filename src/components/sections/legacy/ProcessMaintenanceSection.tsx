@@ -157,7 +157,7 @@ export function ProcessMaintenanceSection() {
                 </div>
 
                 <div className="mx-auto flex max-w-xl flex-col items-center gap-3 text-center">
-                    <ButtonCTA href={whatsappProcessHref} variant="primary" size="lg">
+                    <ButtonCTA target="_blank" href={whatsappProcessHref} variant="primary" size="lg">
                         Quiero entender cómo sería mi proceso
                     </ButtonCTA>
                 </div>

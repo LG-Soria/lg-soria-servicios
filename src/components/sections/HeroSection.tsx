@@ -168,6 +168,7 @@ export function HeroSection() {
               href={whatsappHeroHref}
               variant="primary"
               size="lg"
+              target="_blank"
               className="text-sm font-semibold sm:text-base text-white"
               onClick={() =>
                 trackEvent("cta_whatsapp_click", {
