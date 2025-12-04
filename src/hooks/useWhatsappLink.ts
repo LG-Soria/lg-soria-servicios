@@ -9,7 +9,6 @@ export type WhatsappCTAType =
   | "pack_1"
   | "pack_2"
   | "pack_3"
-  | "pack_4"
   | "floating";
 
 type GetWhatsappLinkOptions = {
@@ -26,9 +25,7 @@ function buildBaseMessage(type: WhatsappCTAType): string {
     case "pack_2":
       return "Hola Lucas, me interesa el Pack 2 (Web de varias secciones).";
     case "pack_3":
-      return "Hola Lucas, me interesa el Pack 3 (Web con integraciones).";
-    case "pack_4":
-      return "Hola Lucas, quiero consultar por un proyecto a medida / sistema web personalizado.";
+      return "Hola Lucas, quiero consultar por un proyecto a medida / sistema web personalizado."; return "Hola Lucas, quiero consultar por un proyecto a medida / sistema web personalizado.";
     case "floating":
       return "Hola Lucas, quiero hacerte una consulta rápida sobre desarrollo web.";
     case "generic":
@@ -50,7 +47,7 @@ export function useWhatsappLink() {
       const { type = "generic", customMessage } = options;
 
       if (!phone) {
-        if (process.env.NODE_ENV === "development") {
+        if (process.env.NODE_ENV === "development" || !phone) {
           // Importante: avisar en consola si falta configurar el número
           console.warn(
             "[useWhatsappLink] Número de WhatsApp no configurado en siteConfig.contact.whatsapp"

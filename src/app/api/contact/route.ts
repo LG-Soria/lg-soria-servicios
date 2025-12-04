@@ -5,7 +5,7 @@ import { Resend } from "resend";
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 const CONTACT_TO_EMAIL =
-  process.env.CONTACT_TO_EMAIL || "lucasoria1996@gmail.com";
+  process.env.CONTACT_TO_EMAIL || "";
 const CONTACT_FROM_EMAIL =
   process.env.CONTACT_FROM_EMAIL || "";
 
@@ -88,29 +88,29 @@ export async function POST(req: NextRequest) {
     // -------- 2) Email de confirmación para la persona --------
     const confirmationPromise = trimmedEmail
       ? resend.emails.send({
-          from: CONTACT_FROM_EMAIL,
-          to: trimmedEmail,
-          subject: "¡Recibí tu mensaje!",
-          text: [
-            `Hola ${trimmedName},`,
-            "",
-            "Gracias por escribirme. Recibí tu mensaje y te voy a responder lo antes posible.",
-            "",
-            "Resumen de lo que enviaste:",
-            trimmedBusiness && `- Negocio / Empresa: ${trimmedBusiness}`,
-            trimmedPhone && `- Teléfono: ${trimmedPhone}`,
-            "",
-            "Mensaje:",
-            trimmedMessage || "(sin mensaje)",
-            "",
-            "Si querés agregar algo más, podés responder directamente a este correo.",
-            "",
-            "Saludos,",
-            "Lucas",
-          ]
-            .filter(Boolean)
-            .join("\n"),
-        })
+        from: CONTACT_FROM_EMAIL,
+        to: trimmedEmail,
+        subject: "¡Recibí tu mensaje!",
+        text: [
+          `Hola ${trimmedName},`,
+          "",
+          "Gracias por escribirme. Recibí tu mensaje y te voy a responder lo antes posible.",
+          "",
+          "Resumen de lo que enviaste:",
+          trimmedBusiness && `- Negocio / Empresa: ${trimmedBusiness}`,
+          trimmedPhone && `- Teléfono: ${trimmedPhone}`,
+          "",
+          "Mensaje:",
+          trimmedMessage || "(sin mensaje)",
+          "",
+          "Si querés agregar algo más, podés responder directamente a este correo.",
+          "",
+          "Saludos,",
+          "Lucas",
+        ]
+          .filter(Boolean)
+          .join("\n"),
+      })
       : Promise.resolve({ error: null } as any);
 
     const [notifyOwnerResult, confirmationResult] = await Promise.all([
